@@ -1,0 +1,33 @@
+.container {
+	width: 400px;
+	margin: 0 auto;
+	padding: 10px;
+	border: 1px solid black;
+}
+#root {
+	width: 400px;
+	margin: 0 auto;
+	padding: 10px;
+	border: 1px solid black;
+}
+#label {
+	text-align: center;
+	text-decoration: underline;
+	padding: 3px;
+}
+#selection {
+	border: 1px solid black;
+	padding: 5px;
+	margin: 2px 2px;
+}
+#input {
+	border: 1px solid black;
+	padding: 5px;
+	margin: 3px 4px;
+}
+#submit {
+	background-color: lightblue;
+	border: 1px solid gray;
+	padding: 5px;
+	margin: 3px 4px;
+}
