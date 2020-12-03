@@ -28,21 +28,22 @@ const spawnLetter = {
     }
 
     return temporaryArrray;
-    // Refactor code here...
+	    // Refactor code here...
   },
 
   translateToNumeric: function (data) {
     // data as a parameter to mySelect must be an array.
     // First Check if the argument is an array and also if it's contains numbers not letters.
-    const isArray = Array.isArray(data);
-    const isPassed = data.every((item) => typeof item != "number");
+    
+    // const isArray  = Array.isArray(data);
+    // const isPassed = data.every((item) => typeof item != "number");
 
-    if (isArray == false || isPassed == false) {
-      this.message = "Cannot process data: you provided incorrect data";
-      return this.message;
-    }
+    // if (isArray == false || isPassed == false) {
+    //   this.message = "Cannot process data: you provided incorrect data";
+    //   return this.message;
+    // }
     // 	Do the necessary things.
-    const newArray = data.map((item) => data.indexOf(item));
+    const newArray = data.map((item) => this.letterCollection.indexOf(item));
     return newArray;
   },
 
@@ -50,7 +51,7 @@ const spawnLetter = {
     return "Hello There!";
   },
 };
-
+	
 console.log(spawnLetter.generateArrayLetter(10));
 
 const storeName = {
@@ -65,11 +66,10 @@ const storeName = {
   },
 };
 
-submit.addEventListener("click", function () {});
-
 window.onload = function () {
   listenToSelect(selection);
 };
+
 selection.onchange = function () {
   listenToSelect(selection);
 };
@@ -98,8 +98,8 @@ const interaction = {
 
       case "generate":
          if (isTrue) {
-           spawnLetter.generateArrayLetter(100000000000000)
-           return;
+         	console.log(spawnLetter.generateArrayLetter(100));
+          return;
          }
         this.guideInfo.innerHTML = "Click the submit button to generate array";
         break;
@@ -143,3 +143,11 @@ submit.onclick = function() {
 	const current = selection.value;
 	interaction.updateGuideInfo(current, true);
 }
+
+
+// TEST CODEs
+const dummy 		= document.getElementById("dummytext");
+const myLetter 	= ["h","v","s",1,2];
+const indexes 	= spawnLetter.translateToNumeric(myLetter);
+console.log(indexes);
+console.log(spawnLetter.letterCollection[7]);
